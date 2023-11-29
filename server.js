@@ -28,23 +28,29 @@ async function mainMenu() {
     switch (answer.action) {
       case "View all departments":
         await getAllDepartments();
+        mainMenu();
         break;
       case "View all roles":
         await getAllRoles();
+        mainMenu();
         break;
       case "View all employees":
         await getAllEmployees();
+        mainMenu();
         break;
       case "Add a department":
         await promptForNewDepartment();
+        mainMenu();
         break;
       case "Add a role":
         await promptForNewRole();
+        mainMenu();
         break;
       case "Add an employee":
         await promptForNewEmployee();
       case "Update an employee role":
         await promptForEmployeeRoleUpdate();
+        mainMenu();
         break;
       case "Exit":
         console.log("Exiting application");
@@ -56,9 +62,7 @@ async function mainMenu() {
     }
   } catch (error) {
     console.error("Error:", error);
-  }
-
-  mainMenu();
+  }  
 }
 
 // Calls functions from db
