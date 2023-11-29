@@ -1,8 +1,10 @@
--- Use your database
--- REPLACE 'your_database_name' with your actual database name
+DROP database IF exists employeeTracker;
+
+CREATE employeeTracker;
+
 USE employeeTracker;
 
--- Department Table
+-- Intializes database
 CREATE TABLE department (
   id INT AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(30) NOT NULL
@@ -12,7 +14,7 @@ CREATE TABLE department (
 CREATE TABLE role (
   id INT AUTO_INCREMENT PRIMARY KEY,
   title VARCHAR(30) NOT NULL,
-  salary DECIMAL(10, 2), -- assuming maximum salary 99999999.99
+  salary DECIMAL(10, 2),
   department_id INT,
   FOREIGN KEY (department_id) REFERENCES department(id)
 );
@@ -25,5 +27,5 @@ CREATE TABLE employee (
   role_id INT,
   manager_id INT,
   FOREIGN KEY (role_id) REFERENCES role(id),
-  FOREIGN KEY (manager_id) REFERENCES employee(id) -- Self-referencing foreign key for manager
+  FOREIGN KEY (manager_id) REFERENCES employee(id) 
 );
