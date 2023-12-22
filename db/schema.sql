@@ -1,8 +1,7 @@
-DROP database IF exists employeeTracker;
+DROP DATABASE IF EXISTS employee_db;
+CREATE DATABASE employee_db;
 
-CREATE employeeTracker;
-
-USE employeeTracker;
+USE employee_db;
 
 -- Intializes database
 CREATE TABLE department (

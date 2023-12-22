@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "N/A",
-    "start": "npm start"
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
@@ -16,7 +16,6 @@
   "dependencies": {
     "express": "^4.18.2",
     "inquirer": "^8.2.4",
-    "mysql": "^2.18.1",
     "mysql2": "^3.6.5",
     "nodemon": "^3.0.1"
   }

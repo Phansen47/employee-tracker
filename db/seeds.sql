@@ -1,4 +1,4 @@
-USE employeeTracker;
+USE employee_tracker;
 
 -- Creates dummy data
 
