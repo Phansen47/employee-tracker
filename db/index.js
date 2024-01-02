@@ -7,16 +7,19 @@ class DB {
   }
 
 // functions to be called by user input
+  // Method to retrieve all departments from the database
   getAllDepartments() {
     return this.connection.promise().query("SELECT * FROM department");
   }
 
+  // Method to add a new department to the database
   addDepartment(departmentName) {
     return this.connection
       .promise()
       .query("INSERT INTO department (name) VALUES (?)", [departmentName]);
   }
 
+  // Method to retrieve all employees along with their details
   getAllEmployees() {
     return this.connection
       .promise()
@@ -29,6 +32,7 @@ class DB {
       );
   }
 
+  // Method to add a new employee to the database
   addEmployee(firstName, lastName, roleId, managerId) {
     return this.connection
       .promise()
@@ -38,6 +42,7 @@ class DB {
       );
   }
 
+  // Method to update an employee's role
   updateEmployeeRole(employeeId, newRoleId) {
     return this.connection
       .promise()
@@ -47,6 +52,7 @@ class DB {
       ]);
   }
 
+  // Method to retrieve all roles from the database
   getAllRoles() {
     return this.connection
       .promise()
@@ -57,6 +63,7 @@ class DB {
       );
   }
 
+  // Method to add a new role to the database
   addRole(title, salary, departmentId) {
     return this.connection
       .promise()

@@ -1,5 +1,3 @@
-// inputValidators.js
-
 // Function to validate that the input is not empty
 const notEmpty = (input) => {
     if (input.trim() === '') {

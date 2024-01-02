@@ -5,6 +5,7 @@
 - [Description](#description)
 - [User Story](#user-story)
 - [Acceptance Criteria](#acceptance-criteria)
+- [Credits](#credits)
 - [Installation](#installation)
 - [Running the Code](#running-the-code)
 
@@ -42,6 +43,9 @@ THEN I am prompted to enter the employee’s first name, last name, role, and ma
 WHEN I choose to update an employee role
 THEN I am prompted to select an employee to update and their new role and this information is updated in the database 
 ```
+
+## Credits
+Dane Shrewsbury 11/27/2023 Tutoring Session - creating class in index.js
 
 ## Installation  
   

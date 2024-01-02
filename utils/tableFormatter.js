@@ -1,4 +1,3 @@
-// tableFormatter.js
 const cTable = require('console.table');
 
 // Function to display a table using console.table package

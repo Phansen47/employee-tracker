@@ -93,11 +93,13 @@ async function promptForNewDepartment() {
   await addDepartment(answers.departmentName);
 }
 
+//calls addDepartment
 async function addDepartment(departmentName) {
   const [department] = await db.addDepartment(departmentName);
   console.log(`Added new department: ${departmentName}`);
 }
 
+// Function to prompt user for a new role then adds it
 async function promptForNewRole() {
   const answers = await inquirer.prompt([
     {
@@ -124,7 +126,7 @@ async function addRole(title, salary, departmentId) {
   const [role] = await db.addRole(title, salary, departmentId);
   console.log(`Added new role: ${title}`);
 }
-
+// Function to prompt user for a new employee and add it
 async function promptForNewEmployee() {
   const answers = await inquirer.prompt([
     {
@@ -146,10 +148,10 @@ async function promptForNewEmployee() {
       type: "input",
       name: "managerId",
       message: "What is the manager ID for the employee? (Enter for none)",
-      default: null, // Allows for null manager ID
+      default: null,
     },
   ]);
-
+// Function to add a employee
   await addEmployee(
     answers.firstName,
     answers.lastName,
@@ -157,7 +159,7 @@ async function promptForNewEmployee() {
     answers.managerId
   );
 }
-
+// Function to prompt user for a new role and add it
 async function addEmployee(firstName, lastName, roleId, managerId) {
   const [employee] = await db.addEmployee(
     firstName,
@@ -167,7 +169,7 @@ async function addEmployee(firstName, lastName, roleId, managerId) {
   );
   console.log(`Added new employee: ${firstName} ${lastName}`);
 }
-
+// Function to prompt user for updating an employee's role
 async function promptForEmployeeRoleUpdate() {
   const answers = await inquirer.prompt([
     {
@@ -181,7 +183,6 @@ async function promptForEmployeeRoleUpdate() {
       message: "What is the new role ID for this employee?",
     },
   ]);
-
   await updateEmployeeRole(answers.employeeId, answers.newRoleId);
 }
 
